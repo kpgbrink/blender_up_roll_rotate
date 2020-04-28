@@ -26,10 +26,10 @@ import bpy
 
 from . test_op import Test_OT_Operator
 from . test_panel import Test_PT_Panel
-from . up_roll_rotate_op import Up_Roll_Rotate_Operator
-from . up_roll_rotate_panel import Up_Roll_Rotate_Panel
+from . up_roll_rotate_op import UPROLLROTATE_OT_Operator
+from . up_roll_rotate_panel import UPROLLROTATE_PT_Panel
 
 
-classes = (Up_Roll_Rotate_Operator, Up_Roll_Rotate_Panel)
+classes = (UPROLLROTATE_OT_Operator, UPROLLROTATE_PT_Panel)
 
 register, unregister = bpy.utils.register_classes_factory(classes)

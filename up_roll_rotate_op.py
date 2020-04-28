@@ -3,7 +3,7 @@ import mathutils
 import math
 from math import radians
 
-class Up_Roll_Rotate_Operator(bpy.types.Operator):
+class UPROLLROTATE_OT_Operator(bpy.types.Operator):
     bl_idname = "view.region_3d_roll"
     bl_label = "Up roll rotate"
     bl_description = "Up rolls the view"

@@ -1,7 +1,7 @@
 import bpy
 
-class Up_Roll_Rotate_Panel(bpy.types.Panel):
-    bl_idname = "Up_Roll_Rotate_Panel"
+class UPROLLROTATE_PT_Panel(bpy.types.Panel):
+    bl_idname = "UPROLLROTATE_PT_Panel"
     bl_label = "Up Roll Rotate Panel"
     bl_category = "Up Roll Rotate"
     bl_space_type = "VIEW_3D"
