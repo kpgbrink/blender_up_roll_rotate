@@ -26,10 +26,11 @@ import bpy
 
 from . test_op import Test_OT_Operator
 from . test_panel import Test_PT_Panel
-from . up_roll_rotate_op import UPROLLROTATE_OT_Operator
-from . up_roll_rotate_panel import UPROLLROTATE_PT_Panel
+from . up_roll_rotate_op import VIEW_OT_up_roll_rotate
+from . up_roll_rotate_panel import UPROLLROTATE_PT_panel
 
+bpy.types.Scene.my_addon = bpy.props.PointerProperty(name="My Pointer", type=bpy.types.Object)
 
-classes = (UPROLLROTATE_OT_Operator, UPROLLROTATE_PT_Panel)
+classes = (VIEW_OT_up_roll_rotate, UPROLLROTATE_PT_panel)
 
 register, unregister = bpy.utils.register_classes_factory(classes)
