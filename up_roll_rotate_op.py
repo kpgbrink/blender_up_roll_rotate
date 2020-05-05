@@ -7,7 +7,16 @@ class VIEW_OT_up_roll_rotate(bpy.types.Operator):
     bl_idname = "view.up_roll_rotate"
     bl_label = "Up roll rotate"
     bl_description = "Up rolls the view"
-    
+
+    def get_follow_object(self, context):
+        if bpy.context.scene.up_roll_rotate_addon.up_roll_select:
+            return bpy.context.scene.up_roll_rotate_addon.up_roll_select
+          # Set to lock object if set
+        lock_object = context.space_data.lock_object
+        if lock_object:
+            return lock_object
+        return bpy.context.active_object
+  
     def execute(self, context):
         window = context.window
         screen = window.screen
@@ -17,12 +26,9 @@ class VIEW_OT_up_roll_rotate(bpy.types.Operator):
                     if region.type == 'WINDOW':
                         override = {'window': window, 'screen': screen, 'area': area, 'region': region}
                         region_3d = area.spaces.active.region_3d
-                        roll_follow_object = bpy.context.active_object
-                        
-                        # Set to lock object if set
-                        lock_object = context.space_data.lock_object
-                        if lock_object:
-                            roll_follow_object = lock_object
+
+                        # get follow object
+                        roll_follow_object = self.get_follow_object(context)
                         
                         rotation_euler = region_3d.view_rotation.copy().to_euler()
                         object_euler = roll_follow_object.rotation_euler.copy()
