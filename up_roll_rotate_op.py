@@ -8,8 +8,6 @@ class VIEW_OT_up_roll_rotate(bpy.types.Operator):
     bl_label = "Up roll rotate"
     bl_description = "Up rolls the view"
     
-    my_string: bpy.props.StringProperty(name="String Value")
-
     def execute(self, context):
         window = context.window
         screen = window.screen

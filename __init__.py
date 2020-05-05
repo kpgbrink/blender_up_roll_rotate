@@ -29,7 +29,14 @@ from . test_panel import Test_PT_Panel
 from . up_roll_rotate_op import VIEW_OT_up_roll_rotate
 from . up_roll_rotate_panel import UPROLLROTATE_PT_panel
 
-bpy.types.Scene.my_addon = bpy.props.PointerProperty(name="My Pointer", type=bpy.types.Object)
+
+# bpy.types.Scene.up_roll_rotate_selected_object = bpy.props.PointerProperty(name="Object to use for up roll rotate", type=bpy.types.Object)
+
+class UpRotateAddonProperties(bpy.types.PropertyGroup):
+    up_roll_select: bpy.props.PointerProperty(name="Up Roll Rotate", type=bpy.types.Object)
+
+bpy.utils.register_class(UpRotateAddonProperties)
+bpy.types.Scene.up_roll_rotate_addon = bpy.props.PointerProperty(type=UpRotateAddonProperties)
 
 classes = (VIEW_OT_up_roll_rotate, UPROLLROTATE_PT_panel)
 

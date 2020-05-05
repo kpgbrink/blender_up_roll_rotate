@@ -25,13 +25,10 @@ class UPROLLROTATE_PT_panel(bpy.types.Panel):
         subcol.active = bool(view.region_3d.view_perspective != 'CAMERA' or view.region_quadviews)
 
         subcol.prop(view, "lock_object")
-
-        props = self.layout.operator('view.up_roll_rotate')
-        props.my_string = "test"
-        print(props.my_string)
+        
         subcol2 = col.column()
         subcol2.active = bool(view.region_3d.view_perspective != 'CAMERA' or view.region_quadviews)
-        subcol2.prop(bpy.context.scene, "my_addon")
+        subcol2.prop(bpy.context.scene.up_roll_rotate_addon, "up_roll_select")
 
         # subcol.prop(props, "my_pointer")
 
@@ -96,7 +93,6 @@ class UPROLLROTATE_PT_panel(bpy.types.Panel):
 
 # if __name__ == "__main__":
 #     register()
-
 
 
 # This stuff doesn't do anything
