@@ -13,7 +13,10 @@ class UPROLLROTATE_PT_panel(bpy.types.Panel):
         scene = context.scene
 
         row = layout.row()
-        row.operator('view.up_roll_rotate', text="Fix Up Roll")
+        row.prop(bpy.context.scene.up_roll_rotate_addon, "up_roll_per_frame")
+
+        row = layout.row()
+        row.operator('view.up_roll_rotate', text="Fix Up Rolls")
 
         layout.use_property_split = True
 
@@ -24,13 +27,13 @@ class UPROLLROTATE_PT_panel(bpy.types.Panel):
         col = layout.column(align=True)
         subcol = col.column()
         subcol.active = bool(view.region_3d.view_perspective != 'CAMERA' or view.region_quadviews)
-
         subcol.prop(view, "lock_object")
         
         subcol2 = col.column()
         subcol2.active = bool(view.region_3d.view_perspective != 'CAMERA' or view.region_quadviews)
         subcol2.prop(bpy.context.scene.up_roll_rotate_addon, "up_roll_select")
 
+        # switch turntable/trackball
         prefs = context.preferences
         inputs = prefs.inputs
         view = prefs.view
