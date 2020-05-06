@@ -13,7 +13,7 @@
 
 bl_info = {
     "name" : "uprotate",
-    "author" : "Kristofer",
+    "author" : "Kristofer Brink",
     "description" : "Addon for fixing roll of camera to follow objects.",
     "blender" : (2, 80, 0),
     "version" : (0, 0, 1),
