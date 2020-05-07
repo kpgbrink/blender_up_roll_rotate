@@ -16,7 +16,7 @@ class UPROLLROTATE_PT_panel(bpy.types.Panel):
         row.prop(bpy.context.scene.up_roll_rotate_addon, "up_roll_per_frame")
 
         row = layout.row()
-        row.operator('view.up_roll_rotate', text="Fix Up Rolls")
+        row.operator('view.up_roll_rotate', text="Fix Up Roll")
 
         layout.use_property_split = True
 

@@ -11,7 +11,6 @@ class DrawUpRotate:
         self.areatype = areatype
         self.handle = self.create_handle(context)
 
-
     def create_handle(self, context):
         handle = self.areatype.draw_handler_add(
             self.draw_region,
@@ -32,8 +31,6 @@ class DrawUpRotate:
     
     def __del__(self):
         remove_handle(self)
-
-        
 
 context = bpy.context             
 dns = bpy.app.driver_namespace

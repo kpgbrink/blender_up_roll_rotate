@@ -28,8 +28,7 @@ from . test_op import Test_OT_Operator
 from . test_panel import Test_PT_Panel
 from . up_roll_rotate_op import VIEW_OT_up_roll_rotate
 from . up_roll_rotate_panel import UPROLLROTATE_PT_panel
-from . draw_up_rotate import DrawUpRotate
-
+# from . draw_up_rotate import DrawUpRotate
 
 # bpy.types.Scene.up_roll_rotate_selected_object = bpy.props.PointerProperty(name="Object to use for up roll rotate", type=bpy.types.Object)
 

@@ -5,7 +5,7 @@ from math import radians
 
 class VIEW_OT_up_roll_rotate(bpy.types.Operator):
     bl_idname = "view.up_roll_rotate"
-    bl_label = "Up roll rotate"
+    bl_label = "Fix Up Roll"
     bl_description = "Up rolls the view"
 
     def get_follow_object(self, context):
