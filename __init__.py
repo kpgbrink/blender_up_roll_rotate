@@ -24,11 +24,10 @@ bl_info = {
 
 import bpy
 
-from . test_op import Test_OT_Operator
-from . test_panel import Test_PT_Panel
 from . up_roll_rotate_op import VIEW_OT_up_roll_rotate
 from . up_roll_rotate_panel import UPROLLROTATE_PT_panel
 # from . draw_up_rotate import DrawUpRotate
+from . draw_handler_up_roll_rotate_op import VIEW_OT_draw_handler_up_roll_rotate
 
 # bpy.types.Scene.up_roll_rotate_selected_object = bpy.props.PointerProperty(name="Object to use for up roll rotate", type=bpy.types.Object)
 
@@ -45,6 +44,6 @@ bpy.types.Scene.up_roll_rotate_addon = bpy.props.PointerProperty(type=UpRotateAd
  
 # draw_handler = bpy.types.SpaceView3D.draw_handler_add(draw, (), 'WINDOW', 'POST_VIEW')
 
-classes = (VIEW_OT_up_roll_rotate, UPROLLROTATE_PT_panel)
+classes = (VIEW_OT_up_roll_rotate, UPROLLROTATE_PT_panel, VIEW_OT_draw_handler_up_roll_rotate)
 
 register, unregister = bpy.utils.register_classes_factory(classes)
