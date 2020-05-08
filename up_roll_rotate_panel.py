@@ -13,8 +13,11 @@ class UPROLLROTATE_PT_panel(bpy.types.Panel):
         scene = context.scene
 
         row = layout.row()
-        row.prop(bpy.context.scene.up_roll_rotate_addon, "up_roll_per_frame")
-        row.operator('view.draw_handler_up_roll_rotate', text="Constant Fix Up Roll")
+        
+        if not bpy.context.scene.up_roll_rotate_addon.started_draw_up_roll:
+            row.operator('view.draw_handler_up_roll_rotate', text="Constant Fix Up Roll")
+        else:
+            row.prop(bpy.context.scene.up_roll_rotate_addon, "up_roll_per_frame")
 
         row = layout.row()
         row.operator('view.up_roll_rotate', text="Fix Up Roll")
