@@ -24,9 +24,9 @@ def up_roll_rotate(context):
 
                     # get follow object
                     roll_follow_object = get_follow_object(context)
+                    object_euler = roll_follow_object.matrix_world.to_euler('XYZ')
                     
                     rotation_euler = region_3d.view_rotation.copy().to_euler()
-                    object_euler = roll_follow_object.rotation_euler.copy()
                     # subtract object rotation
                     rotation_invert = object_euler.copy().to_quaternion()
                     rotation_invert.invert()
