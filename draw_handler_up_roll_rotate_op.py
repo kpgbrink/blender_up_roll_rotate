@@ -12,10 +12,17 @@ class VIEW_OT_draw_handler_up_roll_rotate(bpy.types.Operator):
   
     def execute(self, context):
         print("do while drawing")
-        if not bpy.context.scene.up_roll_rotate_addon.started_draw_up_roll:
-            bpy.context.scene.up_roll_rotate_addon.started_draw_up_roll = True
-            self.handle = bpy.types.SpaceView3D.draw_handler_add(
+        try:
+            if self.handler_up_roll:
+                bpy.types.SpaceView3D.draw_handler_remove(
+                self.handler_up_roll,
+                (context,),
+                'WINDOW')
+                self.handler_up_roll = None
+        except AttributeError:
+            print('making new')
+        self.handler_up_roll = bpy.types.SpaceView3D.draw_handler_add(
             self.draw_region,
             (context,),
-           'WINDOW', 'POST_VIEW')
+            'WINDOW', 'POST_VIEW')
         return {'FINISHED'}

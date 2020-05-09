@@ -32,7 +32,6 @@ from . draw_handler_up_roll_rotate_op import VIEW_OT_draw_handler_up_roll_rotate
 # bpy.types.Scene.up_roll_rotate_selected_object = bpy.props.PointerProperty(name="Object to use for up roll rotate", type=bpy.types.Object)
 
 class UpRotateAddonProperties(bpy.types.PropertyGroup):
-    started_draw_up_roll: bpy.props.BoolProperty(name="Started Draw Up Roll")
     up_roll_per_frame: bpy.props.BoolProperty(name="Toggle Up Roll")
     up_roll_select: bpy.props.PointerProperty(name="Up Roll Rotate", type=bpy.types.Object)
 
